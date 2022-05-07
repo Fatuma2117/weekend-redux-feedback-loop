@@ -7,8 +7,9 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import FeelingForm from '../FeelingForm/FeelingForm';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
-import SupportForm from '../SupportForm/SupportForm'
-import CommentForm from '../CommentForm/CommentForm'
+import SupportForm from '../SupportForm/SupportForm';
+import CommentForm from '../CommentForm/CommentForm';
+import ReviewForm from '../ReviewForm/ReviewForm'
 
 
 function App() {
@@ -56,6 +57,11 @@ function App() {
         <Route exact path="/CommentForm">
           <CommentForm getFeedback={getFeedback}/>
         </Route>
+        {/* <Route exact path="/ReviewForm">
+          <ReviewForm getFeedback={getFeedback}/>
+        </Route> */}
+
+        <ReviewForm/>
 
 
 

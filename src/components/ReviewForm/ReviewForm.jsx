@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 
+
 function ReviewForm() {
 
     const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function ReviewForm() {
         <table>
             <thead>
                 <tr>
-                    <h1>Review Your Feedback</h1>
+                    <th>Review Your Feedback</th>
                 </tr>
             </thead>
             <tbody>
