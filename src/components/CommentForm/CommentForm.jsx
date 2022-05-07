@@ -8,7 +8,7 @@ function CommentForm({ getFeedback}) {
 
   const addComment = () => {
     event.preventDefault();
-    console.log({comment})
+    console.log('idk if this works comment!',{comment})
     // axios({
     //     method: 'POST',
     //     url: '/feedback',
