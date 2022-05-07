@@ -57,21 +57,16 @@ function App() {
         <Route exact path="/CommentForm">
           <CommentForm getFeedback={getFeedback}/>
         </Route>
-        {/* <Route exact path="/ReviewForm">
+        <Route exact path="/ReviewForm">
           <ReviewForm getFeedback={getFeedback}/>
-        </Route> */}
+        </Route>
 
-        <ReviewForm/>
+        {/* <ReviewForm/> */}
 
 
 
         <footer>
-          <Link to="/UnderstandingForm">
-            <button>NEXT</button>
-          </Link>
-          <Link to="/SupportForm">
-            <button>NEXT</button>
-          </Link>
+      
 
         </footer>
       </div>

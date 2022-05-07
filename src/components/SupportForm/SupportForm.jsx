@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-function SupportForm({ getFeedback}) {
 
-  let [support,setSupport] = useState(0);
+
+function SupportForm() {
+
+  let [support, setSupport] = useState(0);
   const dispatch = useDispatch();
 
-  const addSupport = () => {
+  const addSupport = (event) => {
     event.preventDefault();
-    console.log({support})
-    // axios({
-    //     method: 'POST',
-    //     url: '/feedback',
-    //     data: {feeling}
-    // }).then((response) => {
-    //     console.log('this is the response of the post route', response)
-        
-    //     getFeedback();
-    // }).catch((err) => {
-    //     console.log('oops', err)
-    // })
+    console.log('The Support rating:',support)
+    dispatch({
+      type: 'SUPPORT_SCORE',
+      payload: support
+    })
+
 }
 
 
@@ -31,6 +28,10 @@ function SupportForm({ getFeedback}) {
       <input type="number" placeholder="0-10"
         onChange={(event) => setSupport(event.target.value)}
         value={support} />
+
+        <Link to="/CommentForm">
+            <button>NEXT</button>
+          </Link>
 
     </form>
   </section>

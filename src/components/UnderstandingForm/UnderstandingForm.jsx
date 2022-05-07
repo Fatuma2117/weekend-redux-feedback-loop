@@ -1,25 +1,22 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-function UnderstandingForm({ getFeedback}) {
+
+
+function UnderstandingForm() {
 
   let [understanding, setUnderstanding] = useState(0);
   const dispatch = useDispatch();
 
-  const addUnderstanding = () => {
+  const addUnderstanding = (event) => {
     event.preventDefault();
-    console.log({understanding})
-    // axios({
-    //     method: 'POST',
-    //     url: '/feedback',
-    //     data: {feeling}
-    // }).then((response) => {
-    //     console.log('this is the response of the post route', response)
-        
-    //     getFeedback();
-    // }).catch((err) => {
-    //     console.log('oops', err)
-    // })
+    console.log('The Understanding rating:',understanding)
+    dispatch({
+      type: 'UNDERSTANDING_SCORE',
+      payload: understanding
+    })
+
 }
 
 
@@ -31,6 +28,11 @@ function UnderstandingForm({ getFeedback}) {
       <input type="number" placeholder="0-10"
         onChange={(event) => setUnderstanding(event.target.value)}
         value={understanding} />
+
+          <Link to="/SupportForm">
+            <button>NEXT</button>
+          </Link>
+
 
     </form>
   </section>

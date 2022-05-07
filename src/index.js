@@ -15,9 +15,48 @@ const feedbackReducer = (state=[], action) => {
     return state;
 }
 
+
+const feelingReducer = (state=[], action) => {
+  if(action.type === 'FEELING_SCORE'){
+      return action.payload
+  }
+  return state;
+}
+
+const understandingReducer = (state=[], action) => {
+  if(action.type === 'UNDERSTANDING_SCORE'){
+      return action.payload
+  }
+  return state;
+}
+
+const supportReducer = (state=[], action) => {
+  if(action.type === 'SUPPORT_SCORE'){
+      return action.payload
+  }
+  return state;
+}
+
+const commentReducer = (state=[], action) => {
+  if(action.type === 'COMMENT_SCORE'){
+      return action.payload
+  }
+  return state;
+}
+
+
+
+
+
+
+
 const storeInstance = createStore(
     combineReducers({
-      feedbackReducer
+      feedbackReducer,
+      feelingReducer,
+      understandingReducer,
+      supportReducer,
+      commentReducer
     }),
     applyMiddleware(logger),
   );

@@ -1,25 +1,20 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 function FeelingForm({ getFeedback}) {
 
   let [feeling, setFeeling] = useState(0);
   const dispatch = useDispatch();
 
-  const addFeeling = () => {
+  const addFeeling = (event) => {
     event.preventDefault();
-    console.log({feeling})
-    // axios({
-    //     method: 'POST',
-    //     url: '/feedback',
-    //     data: {feeling}
-    // }).then((response) => {
-    //     console.log('this is the response of the post route', response)
-        
-    //     getFeedback();
-    // }).catch((err) => {
-    //     console.log('oops', err)
-    // })
+    console.log('The feeling rating:',feeling)
+    dispatch({
+      type: 'FEELING_SCORE',
+      payload: feeling
+    })
+
 }
 
 
@@ -31,6 +26,10 @@ function FeelingForm({ getFeedback}) {
       <input type="number" placeholder="0-10"
         onChange={(event) => setFeeling(event.target.value)}
         value={feeling} />
+
+          <Link to="/UnderstandingForm">
+            <button>NEXT</button>
+          </Link>
     
     </form>
   </section>

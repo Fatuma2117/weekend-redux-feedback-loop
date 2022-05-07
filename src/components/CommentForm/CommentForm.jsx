@@ -1,26 +1,22 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-function CommentForm({ getFeedback}) {
 
-  let [comment, setComment] = useState('');
-  const dispatch = useDispatch();
+function CommentForm() {
 
-  const addComment = () => {
-    event.preventDefault();
-    console.log('idk if this works comment!',{comment})
-    // axios({
-    //     method: 'POST',
-    //     url: '/feedback',
-    //     data: {feeling}
-    // }).then((response) => {
-    //     console.log('this is the response of the post route', response)
-        
-    //     getFeedback();
-    // }).catch((err) => {
-    //     console.log('oops', err)
-    // })
-}
+    let [comment, setComment] = useState('');
+    const dispatch = useDispatch();
+  
+    const addComment = (event) => {
+      event.preventDefault();
+      console.log('The Comment rating:',comment)
+      dispatch({
+        type: 'COMMENT_SCORE',
+        payload: comment
+      })
+  
+  }
 
 
   return (
@@ -31,6 +27,10 @@ function CommentForm({ getFeedback}) {
       <textarea type="textarea" placeholder="Comments" 
         onChange={(event) => setComment(event.target.value)}
         value={comment} />
+
+            <Link to="/ReviewForm">
+            <button>NEXT</button>
+          </Link>
 
     </form>
   </section>
