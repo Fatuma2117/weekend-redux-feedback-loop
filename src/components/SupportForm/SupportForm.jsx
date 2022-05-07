@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
 
-function SupportedForm({ getFeedback}) {
+function SupportForm({ getFeedback}) {
 
   let [support,setSupport] = useState(0);
   const dispatch = useDispatch();
