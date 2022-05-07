@@ -9,7 +9,8 @@ import FeelingForm from '../FeelingForm/FeelingForm';
 import UnderstandingForm from '../UnderstandingForm/UnderstandingForm';
 import SupportForm from '../SupportForm/SupportForm';
 import CommentForm from '../CommentForm/CommentForm';
-import ReviewForm from '../ReviewForm/ReviewForm'
+import ReviewForm from '../ReviewForm/ReviewForm';
+import ThankYou from '../ThankYou/ThankYou'
 
 
 function App() {
@@ -49,19 +50,20 @@ function App() {
           <FeelingForm getFeedback={getFeedback} />
         </Route>
         <Route exact path="/UnderstandingForm">
-          <UnderstandingForm getFeedback={getFeedback}/>
+          <UnderstandingForm />
         </Route>
         <Route exact path="/SupportForm">
-          <SupportForm getFeedback={getFeedback}/>
+          <SupportForm />
         </Route>
         <Route exact path="/CommentForm">
-          <CommentForm getFeedback={getFeedback}/>
+          <CommentForm />
         </Route>
         <Route exact path="/ReviewForm">
           <ReviewForm getFeedback={getFeedback}/>
         </Route>
-
-        {/* <ReviewForm/> */}
+        <Route exact path="/ThanksForm">
+          <ThankYou/>
+        </Route>
 
 
 

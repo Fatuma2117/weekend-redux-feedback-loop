@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'; 
 
 
 
@@ -8,6 +8,8 @@ function SupportForm() {
 
   let [support, setSupport] = useState(0);
   const dispatch = useDispatch();
+  const history = useHistory();
+
 
   const addSupport = (event) => {
     event.preventDefault();
@@ -16,6 +18,7 @@ function SupportForm() {
       type: 'SUPPORT_SCORE',
       payload: support
     })
+    history.push('/CommentForm')
 
 }
 
@@ -29,9 +32,9 @@ function SupportForm() {
         onChange={(event) => setSupport(event.target.value)}
         value={support} />
 
-        <Link to="/CommentForm">
+      
             <button>NEXT</button>
-          </Link>
+        
 
     </form>
   </section>

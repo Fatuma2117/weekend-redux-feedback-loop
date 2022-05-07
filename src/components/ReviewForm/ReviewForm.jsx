@@ -1,22 +1,19 @@
 import React from 'react';
 import { useSelector} from 'react-redux';
-import { useDispatch } from 'react-redux';
-import { HashRouter as Link } from 'react-router-dom';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import axios from 'axios';
-import { useState} from 'react';
 
 
 
 
-function ReviewForm({getFeedback}) {
 
-    
+function ReviewForm() {
 
     const feedbackFeeling = useSelector(store => store.feelingReducer);
     const feedbackUnderstanding = useSelector(store => store.understandingReducer);
     const feedbackSupport = useSelector(store => store.supportReducer);
     const feedbackComment = useSelector(store => store.commentReducer);
-  
+   
     const handleSubmit =(event)=>{
         event.preventDefault();
 
@@ -26,7 +23,7 @@ function ReviewForm({getFeedback}) {
            support: feedbackSupport,
             comment: feedbackComment
         }
-        console.log('Added new review to database',{ addReview})
+        console.log('Added new review to database', addReview)
 
         axios({
         method: 'POST',
@@ -34,7 +31,7 @@ function ReviewForm({getFeedback}) {
         data: addReview
     }).then((response) => {
         console.log('response /post route', response)
-        alert('Thank you for the feedback!')
+        
     }).catch((err) => {
         console.log('oops', err)
     })
@@ -43,6 +40,7 @@ function ReviewForm({getFeedback}) {
     return(
     <>
         <div>
+        
         <h1>Review Feedback</h1>
             <h3>Feelings:{feedbackFeeling}</h3>
             <h3>Understanding:{feedbackUnderstanding}</h3>
@@ -51,12 +49,10 @@ function ReviewForm({getFeedback}) {
         </div>
         <form onSubmit={handleSubmit}>
             <Link to="/ThanksForm">
-            <button>NEXT</button>
+            <button>SUBMIT</button>
           </Link>
-
-
         </form>
-    
+       
     </>
     );
 

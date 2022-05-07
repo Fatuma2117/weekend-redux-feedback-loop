@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import {useDispatch} from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
+
 
 
 function CommentForm() {
 
     let [comment, setComment] = useState('');
     const dispatch = useDispatch();
-  
+  const history = useHistory();
     const addComment = (event) => {
       event.preventDefault();
       console.log('The Comment rating:',comment)
@@ -15,7 +16,7 @@ function CommentForm() {
         type: 'COMMENT_SCORE',
         payload: comment
       })
-  
+      history.push('/ReviewForm')
   }
 
 
@@ -28,9 +29,9 @@ function CommentForm() {
         onChange={(event) => setComment(event.target.value)}
         value={comment} />
 
-            <Link to="/ReviewForm">
+           
             <button>NEXT</button>
-          </Link>
+        
 
     </form>
   </section>
