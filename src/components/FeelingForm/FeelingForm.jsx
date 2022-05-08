@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 function FeelingForm() {
 
-  let [feeling, setFeeling] = useState('');
+  let [feeling, setFeeling] = useState(0);
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -19,7 +19,6 @@ function FeelingForm() {
 
     history.push('/UnderstandingForm');
   }
-
 
   return (
     <section>

@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function UnderstandingForm() {
 
-  let [understanding, setUnderstanding] = useState('');
+  let [understanding, setUnderstanding] = useState(0);
 
   const dispatch = useDispatch();
   const history = useHistory();
