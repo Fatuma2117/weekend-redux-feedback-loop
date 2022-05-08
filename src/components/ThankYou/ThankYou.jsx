@@ -1,21 +1,15 @@
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 
-function ThankYou (){
+function ThankYou() {
 
-    return(
+    return (
         <>
-        
-        <h1>Thank you for your feedback!</h1>
-
-        <Link to="/">
-            <button>Go Back</button>
-          </Link>
-        
-        
+            <h1>Thank you for your feedback!</h1>
+            <Link to="/">
+                <button>Go Back</button>
+            </Link>
         </>
-
-
     )
 }
 

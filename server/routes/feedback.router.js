@@ -2,17 +2,6 @@ const express = require('express');
 const router = express.Router();
 const pool = require('../modules/pool');
 
-//router.get
-router.get('/', (req, res) => {
-    console.log('GET /FEEDBACK!');
-    pool.query('SELECT * from "feedback";')
-        .then((result) => {
-            res.send(result.rows);
-        }).catch((error) => {
-            console.log('Error GET', error)
-            res.sendStatus(500);
-        });
-})
 
 
 router.post('/', (req, res) => {
@@ -33,12 +22,12 @@ router.post('/', (req, res) => {
     ]
     pool.query(sqlText, sqlValues)
         .then((dbResult) => {
-            console.log('Added feedback to the database', feedback);
+            console.log('Added feedback to the database');
             res.sendStatus(201);
         })
         .catch((error) => {
             console.log('Error making database query', error);
-            res.sendStatus(500); 
+            res.sendStatus(500);
         })
 })
 
