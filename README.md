@@ -1,9 +1,27 @@
 # Project Name
+Feedback Form
 
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
 
 ## Description
+Duration :Three Day Sprint
 
-Your project description goes here. What problem did you solve? How did you solve it?
+One of the best ways to improve overall customer experience is to ask for feedback reviews. Feedback forms can help you find ways to improve business or products. In my feedback form students at Prime can express themselves with responses to four questions, How are you feeling today, How well are you being supported, How well are you understanding the content, and can leave any other comments or questions. At the end of the form students are thanked for their time and all the student information is stored in a database. 
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+
+#### Screen Shot
+
+
+
+
+
+#### Built With
+    - React, Redux, JavaScript
+    - Node - express, pg, body-parser
+    - SQL Database Postico, Postgres
+
+#### Installation
+See database.sql to link to database.
+
+
+#### Support
+If you have questions or issues, please email me at Abdi.fatuma776@gmail.com.
