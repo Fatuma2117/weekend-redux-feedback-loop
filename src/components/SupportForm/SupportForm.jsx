@@ -22,6 +22,10 @@ function SupportForm() {
 
   }
 
+  const handleBackClick =()=>{
+    history.push('/UnderstandingForm')
+  }
+
 
   return (
     <section>
@@ -33,6 +37,7 @@ function SupportForm() {
           value={support} />
         <button>NEXT</button>
       </form>
+      <button onClick={handleBackClick}>Go Back</button>
     </section>
   );
 }

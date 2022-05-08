@@ -20,6 +20,10 @@ function UnderstandingForm() {
     history.push('/SupportForm')
   }
 
+  const handleBackClick =()=>{
+    history.push('/')
+  }
+
 
   return (
     <section>
@@ -30,7 +34,10 @@ function UnderstandingForm() {
           onChange={(event) => setUnderstanding(event.target.value)}
           value={understanding} />
         <button>NEXT</button>
+       
       </form>
+        <button onClick={handleBackClick}>Go Back</button>
+
     </section>
   );
 }

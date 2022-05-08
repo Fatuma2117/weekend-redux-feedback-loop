@@ -18,7 +18,9 @@ function CommentForm() {
         })
         history.push('/ReviewForm')
     }
-
+    const handleBackClick =()=>{
+        history.push('/SupportForm')
+      }
 
     return (
         <section>
@@ -30,6 +32,7 @@ function CommentForm() {
                     value={comment} />
                 <button>NEXT</button>
             </form>
+            <button onClick={handleBackClick}>Go Back </button>
         </section>
     );
 }
