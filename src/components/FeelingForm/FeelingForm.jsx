@@ -5,19 +5,19 @@ import { useHistory } from 'react-router-dom';
 
 function FeelingForm() {
 
-  let [feeling, setFeeling] = useState(0);
+  let [feeling, setFeeling] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
   const addFeeling = (event) => {
     event.preventDefault();
-    console.log('The feeling rating:', feeling)
+    console.log('The feeling rating:', feeling);
     dispatch({
       type: 'FEELING_SCORE',
       payload: feeling
     })
 
-    history.push('/UnderstandingForm')
+    history.push('/UnderstandingForm');
   }
 
 

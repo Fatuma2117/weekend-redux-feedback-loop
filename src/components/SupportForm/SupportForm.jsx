@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 function SupportForm() {
 
-  let [support, setSupport] = useState(0);
+  let [support, setSupport] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -18,12 +18,12 @@ function SupportForm() {
       type: 'SUPPORT_SCORE',
       payload: support
     })
-    history.push('/CommentForm')
+    history.push('/CommentForm');
 
   }
 
-  const handleBackClick =()=>{
-    history.push('/UnderstandingForm')
+  const handleBackClick = () => {
+    history.push('/UnderstandingForm');
   }
 
 
@@ -37,7 +37,7 @@ function SupportForm() {
           value={support} />
         <button>NEXT</button>
       </form>
-      <button onClick={handleBackClick}>Go Back</button>
+      <button onClick={handleBackClick}>Back</button>
     </section>
   );
 }

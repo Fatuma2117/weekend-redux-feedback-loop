@@ -20,7 +20,7 @@ function ReviewForm() {
             support: feedbackSupport,
             comment: feedbackComment
         }
-        console.log('Added new review to database', addReview)
+        console.log('Added new review to database', addReview);
 
         axios({
             method: 'POST',
@@ -35,10 +35,12 @@ function ReviewForm() {
         })
 
     }
+    const handleBackClick = () => {
+        history.push('/CommentForm');
+    }
     return (
         <>
             <div>
-
                 <h1>Review Feedback</h1>
                 <h3>Feelings:{feedbackFeeling}</h3>
                 <h3>Understanding:{feedbackUnderstanding}</h3>
@@ -48,11 +50,10 @@ function ReviewForm() {
             <form onSubmit={handleSubmit}>
                 <button>SUBMIT</button>
             </form>
+            <button onClick={handleBackClick}>Back</button>
 
         </>
     );
-
-
 }
 
 export default ReviewForm;

@@ -4,9 +4,11 @@ import { useHistory } from 'react-router-dom';
 
 
 
+
 function UnderstandingForm() {
 
-  let [understanding, setUnderstanding] = useState(0);
+  let [understanding, setUnderstanding] = useState('');
+
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -17,12 +19,13 @@ function UnderstandingForm() {
       type: 'UNDERSTANDING_SCORE',
       payload: understanding
     })
-    history.push('/SupportForm')
+    history.push('/SupportForm');
   }
 
-  const handleBackClick =()=>{
-    history.push('/')
-  }
+  const handleBackClick = () => {
+    history.push('/');
+
+  };
 
 
   return (
@@ -34,9 +37,9 @@ function UnderstandingForm() {
           onChange={(event) => setUnderstanding(event.target.value)}
           value={understanding} />
         <button>NEXT</button>
-       
+
       </form>
-        <button onClick={handleBackClick}>Go Back</button>
+      <button onClick={handleBackClick}>Back</button>
 
     </section>
   );

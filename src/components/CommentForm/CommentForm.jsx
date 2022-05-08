@@ -7,20 +7,22 @@ import { useHistory } from 'react-router-dom';
 function CommentForm() {
 
     let [comment, setComment] = useState('');
+
     const dispatch = useDispatch();
     const history = useHistory();
+
     const addComment = (event) => {
         event.preventDefault();
-        console.log('The Comment rating:', comment)
+        console.log('The Comment rating:', comment);
         dispatch({
             type: 'COMMENT_SCORE',
             payload: comment
         })
-        history.push('/ReviewForm')
+        history.push('/ReviewForm');
     }
-    const handleBackClick =()=>{
-        history.push('/SupportForm')
-      }
+    const handleBackClick = () => {
+        history.push('/SupportForm');
+    }
 
     return (
         <section>
@@ -32,7 +34,7 @@ function CommentForm() {
                     value={comment} />
                 <button>NEXT</button>
             </form>
-            <button onClick={handleBackClick}>Go Back </button>
+            <button onClick={handleBackClick}>Back</button>
         </section>
     );
 }
