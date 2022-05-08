@@ -7,7 +7,7 @@ import { useHistory } from 'react-router-dom';
 
 function UnderstandingForm() {
 
-  let [understanding, setUnderstanding] = useState(0);
+  let [understanding, setUnderstanding] = useState('');
 
   const dispatch = useDispatch();
   const history = useHistory();
@@ -19,7 +19,15 @@ function UnderstandingForm() {
       type: 'UNDERSTANDING_SCORE',
       payload: understanding
     })
-    history.push('/SupportForm');
+
+
+    if (understanding === '') {
+      alert('Please fill out form completely')
+      history.push('/UnderstandingForm');
+    } else {
+      history.push('/SupportForm');
+    }
+
   }
 
   const handleBackClick = () => {

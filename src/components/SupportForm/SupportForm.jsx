@@ -6,7 +6,7 @@ import { useHistory } from 'react-router-dom';
 
 function SupportForm() {
 
-  let [support, setSupport] = useState(0);
+  let [support, setSupport] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -18,7 +18,14 @@ function SupportForm() {
       type: 'SUPPORT_SCORE',
       payload: support
     })
-    history.push('/CommentForm');
+
+
+    if (support === '') {
+      alert('Please fill out form completely')
+      history.push('/SupportForm');
+    } else {
+      history.push('/CommentForm');
+    }
 
   }
 

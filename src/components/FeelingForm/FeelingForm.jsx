@@ -5,7 +5,7 @@ import { useHistory } from 'react-router-dom';
 
 function FeelingForm() {
 
-  let [feeling, setFeeling] = useState(0);
+  let [feeling, setFeeling] = useState('');
   const dispatch = useDispatch();
   const history = useHistory();
 
@@ -17,7 +17,13 @@ function FeelingForm() {
       payload: feeling
     })
 
-    history.push('/UnderstandingForm');
+    if (feeling === '') {
+      alert('Please fill out form completely')
+      history.push('/');
+    } else {
+      history.push('/UnderstandingForm');
+    }
+
   }
 
   return (
